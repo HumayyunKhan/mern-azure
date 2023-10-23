@@ -43,11 +43,14 @@ app.post("/create", (req, res) => {
   // .catch((err) => console.log(err));
   res.send("HELLLO WORLDE CREATED")
 });
-
-app.use(express.static("./client/build"))
-app.get("*",(req,res)=>{
-  res.sendFile(path.resolve(__dirname,"client","build","index.html"))
+app.get("/",(req,res)=>{
+  res.send("HELLO WORLd")
 })
+
+// app.use(express.static("./client/build"))
+// app.get("*",(req,res)=>{
+//   res.sendFile(path.resolve(__dirname,"client","build","index.html"))
+// })
 app.listen(3001, () => {
   console.log(`Server is running on post ${port}`);
 });
